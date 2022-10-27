@@ -19,5 +19,10 @@ public class Enemy : MonoBehaviour
     {
         var moveDirection = player.transform.position - transform.position;
         enemyRb.AddForce(moveDirection.normalized * speed);
+
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
